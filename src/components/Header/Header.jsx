@@ -4,13 +4,13 @@ import * as S from "./Header.style";
 const Header = ({ type, onClickBack }) => {
   const headerList = {
     signup: SIGNUP_HEADER,
-    login: LOGIN_HEADER,
+    signin: SIGNIN_HEADER,
     todo: TODO_HEADER,
   };
 
   return (
     <S.HeaderBox>
-      <S.Back alt="arrow" src="images/signup/arrow.png" onClick={onClickBack} />
+      <S.Back alt="back" src="images/header/back.png" onClick={onClickBack} />
       <S.Title>{headerList[type].title}</S.Title>
       <div />
     </S.HeaderBox>
@@ -24,7 +24,7 @@ const SIGNUP_HEADER = {
   button: true,
 };
 
-const LOGIN_HEADER = {
+const SIGNIN_HEADER = {
   title: "로그인",
   button: true,
 };
