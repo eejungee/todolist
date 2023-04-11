@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as S from "./Signin.style";
+import API from "../../config/config";
 import Header from "../../components/Header/Header";
+import * as S from "./Signin.style";
 
 const Signin = () => {
   const [signinInfo, setSigninInfo] = useState({
@@ -37,7 +38,7 @@ const Signin = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://www.pre-onboarding-selection-task.shop/auth/signin", {
+    fetch(`${API.SIGNIN}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
