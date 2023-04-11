@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header";
-import * as S from "./SignUp.style";
+import * as S from "./Signup.style";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
     email: "",
     password: "",
@@ -87,4 +87,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
