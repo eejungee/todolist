@@ -1,8 +1,8 @@
 import React from "react";
-import * as S from "./ToDo.style";
+import * as S from "./Todo.style";
 
-const ToDo = () => {
-  return <div>ToDo</div>;
+const Todo = () => {
+  return <div>Todo</div>;
 };
 
-export default ToDo;
+export default Todo;
