@@ -12,10 +12,12 @@ const Signup = () => {
 
   const { email, password } = signupInfo;
 
-  const access_token = localStorage.getItem("access_token");
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    access_token && navigate("/todo");
+    if (token) {
+      navigate("/todo");
+    }
   }, []);
 
   const handleEmail = (e) => {
@@ -66,6 +68,7 @@ const Signup = () => {
           data-testid="email-input"
           type="text"
           value={email}
+          placeholder="@를 포함하여 입력하세요"
           onChange={handleEmail}
         />
         {email && !checkEmail && (
@@ -76,6 +79,7 @@ const Signup = () => {
           data-testid="password-input"
           type="password"
           value={password}
+          placeholder="8자리 이상 입력하세요"
           onChange={handlePassword}
         />
         {password && !checkPassword && (
