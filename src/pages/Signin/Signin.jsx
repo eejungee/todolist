@@ -12,10 +12,11 @@ const Signin = () => {
 
   const { email, password } = signinInfo;
 
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    const token = localStorage.getItem("access-token");
     if (token) {
-      navigate("todo");
+      navigate("/todo");
     }
   }, []);
 
@@ -56,7 +57,8 @@ const Signin = () => {
         } else {
           alert("로그인 실패");
         }
-      });
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
