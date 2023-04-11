@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import API from "../../config/config";
 import Header from "../../components/Header/Header";
 import * as S from "./Signup.style";
-import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
@@ -10,6 +11,12 @@ const Signup = () => {
   });
 
   const { email, password } = signupInfo;
+
+  const access_token = localStorage.getItem("access_token");
+
+  useEffect(() => {
+    access_token && navigate("/todo");
+  }, []);
 
   const handleEmail = (e) => {
     setSignupInfo((prev) => ({ ...prev, email: e.target.value }));
@@ -30,7 +37,7 @@ const Signup = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://www.pre-onboarding-selection-task.shop/auth/signup", {
+    fetch(`${API.SIGNUP}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,15 +54,15 @@ const Signup = () => {
           alert("회원가입 실패");
         }
       })
-      .then((data) => console.log(data));
+      .catch((error) => console.error(error));
   };
 
   return (
     <div>
       <Header type="signup" />
       <S.FormBox>
-        <S.SignUpLabel>이메일</S.SignUpLabel>
-        <S.SignUpInput
+        <S.SignupLabel>이메일</S.SignupLabel>
+        <S.SignupInput
           data-testid="email-input"
           type="text"
           value={email}
@@ -64,8 +71,8 @@ const Signup = () => {
         {email && !checkEmail && (
           <S.AlertMsg>@를 포함하여 입력해주세요</S.AlertMsg>
         )}
-        <S.SignUpLabel>비밀번호</S.SignUpLabel>
-        <S.SignUpInput
+        <S.SignupLabel>비밀번호</S.SignupLabel>
+        <S.SignupInput
           data-testid="password-input"
           type="password"
           value={password}

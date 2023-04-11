@@ -1,11 +1,18 @@
 import React from "react";
 import * as S from "./Header.style";
+import { useNavigate } from "react-router-dom";
 
-const Header = ({ type, onClickBack }) => {
+const Header = ({ type }) => {
   const headerList = {
     signup: SIGNUP_HEADER,
     signin: SIGNIN_HEADER,
     todo: TODO_HEADER,
+  };
+
+  const navigate = useNavigate();
+
+  const onClickBack = () => {
+    navigate("/");
   };
 
   return (
