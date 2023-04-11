@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/Header/Header";
 import API from "../../config/config";
+import Header from "../../components/Header/Header";
 import * as S from "./Signup.style";
 
 const Signup = () => {
