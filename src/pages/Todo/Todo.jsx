@@ -117,8 +117,6 @@ const Todo = () => {
                 todo={todo}
                 index={index}
                 setTodos={setTodos}
-                todoInput={todoInput}
-                handleTodoInput={handleTodoInput}
                 deleteTodo={deleteTodo}
               />
             ))}
