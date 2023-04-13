@@ -37,6 +37,6 @@ const SIGNIN_HEADER = {
 };
 
 const TODO_HEADER = {
-  title: "전단등록",
+  title: "TODO LIST",
   button: false,
 };
