@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../../config/config";
-import Header from "../../components/Header/Header";
 import * as S from "./Signin.style";
+import Header from "../../components/Header/Header";
 
 const Signin = () => {
   const [signinInfo, setSigninInfo] = useState({
@@ -12,13 +11,16 @@ const Signin = () => {
 
   const { email, password } = signinInfo;
 
-  const token = localStorage.getItem("token");
+  const access_token = localStorage.getItem("access_token");
 
   useEffect(() => {
-    if (token) {
-      navigate("/todo");
+    if (access_token) {
+      console.log(access_token);
+      // navigate("todo");
     }
   }, []);
+
+  console.log(access_token);
 
   const handleEmail = (e) => {
     setSigninInfo((prev) => ({ ...prev, email: e.target.value }));
@@ -39,7 +41,7 @@ const Signin = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`${API.SIGNIN}`, {
+    fetch("https://www.pre-onboarding-selection-task.shop/auth/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,14 +53,13 @@ const Signin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        localStorage.setItem("token", data.access_token);
+        localStorage.setItem("access_token", data.access_token);
         if (data.access_token !== undefined) {
           return navigate("/todo");
         } else {
           alert("로그인 실패");
         }
-      })
-      .catch((error) => console.error(error));
+      });
   };
 
   return (
