@@ -11,16 +11,16 @@ const Signin = () => {
 
   const { email, password } = signinInfo;
 
-  const access_token = localStorage.getItem("access_token");
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (access_token) {
-      console.log(access_token);
-      // navigate("todo");
+    if (token) {
+      console.log(token);
+      navigate("/todo");
     }
   }, []);
 
-  console.log(access_token);
+  console.log(token);
 
   const handleEmail = (e) => {
     setSigninInfo((prev) => ({ ...prev, email: e.target.value }));
@@ -53,8 +53,8 @@ const Signin = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        localStorage.setItem("access_token", data.access_token);
-        if (data.access_token !== undefined) {
+        localStorage.setItem("token", data.access_token);
+        if (token) {
           return navigate("/todo");
         } else {
           alert("로그인 실패");
