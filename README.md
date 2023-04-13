@@ -1,71 +1,52 @@
-# Getting Started with Create React App
+![preonboarding](https://user-images.githubusercontent.com/88709727/231800738-65e4b915-d4ca-4b27-b671-e8d75e9adc5f.jpeg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ✔️ 원티드 프리온보딩 프론트엔드 - 선발 과제
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+## 배포링크
+___
 
-### `npm start`
+* signup : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/signup
+* signin : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/signin
+* todo : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/todo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 기술스택
+___
 
-### `npm test`
+|JavaScript|React.js|Styled-components|
+|---|---|---|
+|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; justify-content: center; align-items: center;"><img src="https://blog.kakaocdn.net/dn/l92lK/btqFNFi2V2k/kIYdVhPlhlvoG8ULF0uy61/img.png" alt="icon" width="65" height="65" /></div>|
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br/>
 
-### `npm run build`
+## 구현사항
+___
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### signup
+* 이메일과 비밀번호의 유효성 검사기능
+* 회원가입 완료 시 `/signup` 경로로 이동
+* 로컬 스토리지에 토큰이 있는 상태로 페이지 접속 시 `/todo` 경로로 리다이렉트 처리 구현
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### signin
+* 이메일과 비밀번호의 유효성 검사기능
+* 로그인 완료 시 응답받은 JWT 저장 후 `/todo` 경로로 이동
+* 로컬 스토리지에 토큰이 있는 상태로 페이지 접속 시 `/todo` 경로로 리다이렉트 처리 구현
+<br/>
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### todo
+* 목록에 TODO의 내용과 완료 여부 표시
+* 새로운 TODO 입력 가능
+* TODO의 체크박스를 통해 완료 여부를 수정 가능
+* TODO 우측에 수정버튼과 삭제 버튼으로 댓글 수정과 삭제 가능
+* 로컬 스토리지에 토큰이 없는 상태로 페이지 접속 시 `/signin` 경로로 리다이렉트 처리 구현
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# repository
+---
