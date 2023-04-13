@@ -4,6 +4,18 @@
 
 <br/>
 
+
+## 실행방법
+___
+
+```
+git clone https://github.com/eejungee/wanted-pre-onboarding-frontend.git
+npm install
+npm start
+```
+
+<br/>
+
 ## 배포링크
 ___
 
