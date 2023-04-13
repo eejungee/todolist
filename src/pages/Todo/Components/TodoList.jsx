@@ -6,8 +6,6 @@ const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
   const [isUpdateClicked, setIsUpdateClicked] = useState(false);
   const [updateInput, setUpdateInput] = useState(todo.todo);
 
-  // console.log(updateInput);
-
   const token = localStorage.getItem("token");
 
   const handleUpdate = (e) => {
@@ -55,8 +53,7 @@ const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
 
     setTodos((prev) => {
       const updatedTodos = [...prev];
-      console.log(updatedTodos[index]);
-      // updatedTodos[index].todo = updateInput;
+      updatedTodos[index].todo = updateInput;
       return updatedTodos;
     });
 

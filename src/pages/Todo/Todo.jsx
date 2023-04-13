@@ -92,8 +92,6 @@ const Todo = () => {
       });
   };
 
-  console.log(todos);
-
   return (
     <div>
       <Header type="todo" />
