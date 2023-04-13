@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { css } from "styled-components";
-import { flex } from "../../../../styles/mixin";
+import { flex } from "../../../styles/mixin";
 
 const ListBox = css`
   ${flex("space-between", null, null)}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../config/config";
-import Header from "../../components/Header/Header";
+import Header from "../../Components/Header/Header";
 import * as S from "./Signup.style";
 
 const Signup = () => {
@@ -13,12 +13,13 @@ const Signup = () => {
   const { email, password } = signupInfo;
 
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (token) {
       navigate("/todo");
     }
-  }, []);
+  }, [navigate]);
 
   const handleEmail = (e) => {
     setSignupInfo((prev) => ({ ...prev, email: e.target.value }));
@@ -33,8 +34,6 @@ const Signup = () => {
   const checkPassword = password && password.length >= 8;
 
   const handleDisabled = !(checkEmail === true && checkPassword === true);
-
-  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +55,10 @@ const Signup = () => {
           alert("회원가입 실패");
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        alert(`Error : ${error}`);
+      });
   };
 
   return (

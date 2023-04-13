@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./Signin.style";
-import Header from "../../components/Header/Header";
+import Header from "../../Components/Header/Header";
 
 const Signin = () => {
   const [signinInfo, setSigninInfo] = useState({
@@ -12,15 +12,13 @@ const Signin = () => {
   const { email, password } = signinInfo;
 
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (token) {
-      console.log(token);
       navigate("/todo");
     }
-  }, []);
-
-  console.log(token);
+  }, [navigate]);
 
   const handleEmail = (e) => {
     setSigninInfo((prev) => ({ ...prev, email: e.target.value }));
@@ -35,8 +33,6 @@ const Signin = () => {
   const checkPassword = password && password.length >= 8;
 
   const handleDisabled = !(checkEmail === true && checkPassword === true);
-
-  const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -54,11 +50,11 @@ const Signin = () => {
       .then((res) => res.json())
       .then((data) => {
         localStorage.setItem("token", data.access_token);
-        if (token) {
-          return navigate("/todo");
-        } else {
-          alert("로그인 실패");
-        }
+        navigate("/todo");
+      })
+      .catch((error) => {
+        console.error(error);
+        alert(`Error : ${error}`);
       });
   };
 
