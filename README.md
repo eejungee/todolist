@@ -9,9 +9,9 @@
 ___
 
 ```
-git clone https://github.com/eejungee/wanted-pre-onboarding-frontend.git
-npm install
-npm start
+$ git clone https://github.com/eejungee/wanted-pre-onboarding-frontend.git
+$ npm install
+$ npm start
 ```
 
 <br/>
