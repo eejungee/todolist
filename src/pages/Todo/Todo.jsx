@@ -92,36 +92,36 @@ const Todo = () => {
       });
   };
 
+  console.log(todos);
+
   return (
     <div>
       <Header type="todo" />
-      <div onSubmit={(e) => addTodo(e)}>
-        <S.TodoInputBox>
-          <S.TodoInput
-            data-testid="new-todos-input"
-            type="text"
-            value={todoInput}
-            placeholder="할 일을 입력하세요"
-            onChange={handleTodoInput}
-          />
-          <S.AddBtn data-testid="new-todos-add-button" type="submit">
-            추가
-          </S.AddBtn>
-        </S.TodoInputBox>
-        {isEmpty && <S.AlertMsg>내용을 입력하세요</S.AlertMsg>}
-        <S.TodoLists>
-          {todos.length >= 1 &&
-            todos.map((todo, index) => (
-              <TodoList
-                key={todo.id}
-                todo={todo}
-                index={index}
-                setTodos={setTodos}
-                deleteTodo={deleteTodo}
-              />
-            ))}
-        </S.TodoLists>
-      </div>
+      <S.TodoInputBox onSubmit={(e) => addTodo(e)}>
+        <S.TodoInput
+          data-testid="new-todos-input"
+          type="text"
+          value={todoInput}
+          placeholder="할 일을 입력하세요"
+          onChange={handleTodoInput}
+        />
+        <S.AddBtn data-testid="new-todos-add-button" type="submit">
+          추가
+        </S.AddBtn>
+      </S.TodoInputBox>
+      {isEmpty && <S.AlertMsg>내용을 입력하세요</S.AlertMsg>}
+      <S.TodoLists>
+        {todos.length >= 1 &&
+          todos.map((todo, index) => (
+            <TodoList
+              key={todo.id}
+              todo={todo}
+              index={index}
+              setTodos={setTodos}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+      </S.TodoLists>
     </div>
   );
 };

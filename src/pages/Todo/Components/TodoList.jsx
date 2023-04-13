@@ -6,6 +6,8 @@ const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
   const [isUpdateClicked, setIsUpdateClicked] = useState(false);
   const [updateInput, setUpdateInput] = useState(todo.todo);
 
+  // console.log(updateInput);
+
   const token = localStorage.getItem("token");
 
   const handleUpdate = (e) => {
@@ -53,7 +55,8 @@ const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
 
     setTodos((prev) => {
       const updatedTodos = [...prev];
-      updatedTodos[index].todo = updateInput;
+      console.log(updatedTodos[index]);
+      // updatedTodos[index].todo = updateInput;
       return updatedTodos;
     });
 
@@ -102,7 +105,7 @@ const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
                 <S.LeftBtn
                   data-testid="submit-button"
                   type="submit"
-                  onClick={(e) => updateTodo(todo.id, updateInput, e)}
+                  onClick={(e) => updateTodo(todo.id, index, updateInput, e)}
                 >
                   제출
                 </S.LeftBtn>
