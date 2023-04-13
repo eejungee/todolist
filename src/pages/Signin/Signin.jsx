@@ -47,7 +47,13 @@ const Signin = () => {
         password: password,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          return navigate("/todo");
+        } else {
+          alert("로그인 실패");
+        }
+      })
       .then((data) => {
         localStorage.setItem("token", data.access_token);
         navigate("/todo");
