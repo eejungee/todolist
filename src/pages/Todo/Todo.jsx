@@ -97,13 +97,13 @@ const Todo = () => {
       <Header type="todo" />
       <S.TodoInputBox onSubmit={(e) => addTodo(e)}>
         <S.TodoInput
-          data-testid="new-todos-input"
+          data-testid="new-todo-input"
           type="text"
           value={todoInput}
           placeholder="할 일을 입력하세요"
           onChange={handleTodoInput}
         />
-        <S.AddBtn data-testid="new-todos-add-button" type="submit">
+        <S.AddBtn data-testid="new-todo-add-button" type="submit">
           추가
         </S.AddBtn>
       </S.TodoInputBox>
