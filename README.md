@@ -1,6 +1,5 @@
-![preonboarding](https://user-images.githubusercontent.com/88709727/231800738-65e4b915-d4ca-4b27-b671-e8d75e9adc5f.jpeg)
-
-# ✔️ 원티드 프리온보딩 프론트엔드 - 선발 과제
+# To Do List
+회원가입, 로그인이 가능하고 to do를 입력하고 삭제할 수 있는 페이지 제작
 
 <br/>
 
