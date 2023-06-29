@@ -3,7 +3,7 @@ import { css } from "styled-components";
 import { flex } from "../../../styles/mixin";
 
 const ListBox = css`
-  ${flex("space-between", null, null)}
+  ${flex("space-between", "center", "row")}
   gap: 10px;
 `;
 
@@ -19,7 +19,7 @@ const Btn = css`
 `;
 
 export const TodoList = styled.li`
-  ${flex("space-between", "center", null)}
+  ${flex("space-between", "center", "row")}
   width: 330px;
   padding: 5px;
   border-radius: 8px;
@@ -35,7 +35,7 @@ export const UpdateInput = styled.input`
 `;
 
 export const BtnBox = styled.div`
-  ${flex(null, null, null)}
+  ${flex()}
   width: 110px;
   gap: 10px;
 `;
@@ -55,6 +55,6 @@ export const ListItem = styled.div`
 `;
 
 export const ListInput = styled.p`
-  ${flex("flex-start", "center", null)}
+  ${flex("flex-start", "center", "row")}
   ${InputBox}
 `;

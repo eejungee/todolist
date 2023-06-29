@@ -5,10 +5,17 @@ import Header from "../../Components/Header/Header";
 import TodoList from "./Components/TodoList";
 import * as S from "./Todo.style";
 
+interface TodoType {
+  id: number;
+  todo: string;
+  isCompleted: boolean;
+  userId: number;
+}
+
 const Todo = () => {
-  const [todoInput, setTodoInput] = useState("");
-  const [isEmpty, setIsEmpty] = useState(false);
-  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState<string>("");
+  const [isEmpty, setIsEmpty] = useState<boolean>(false);
+  const [todos, setTodos] = useState<TodoType[]>([]);
 
   const token = localStorage.getItem("token");
 

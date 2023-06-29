@@ -40,3 +40,14 @@ export const SubmitBtn = styled.button`
   font-weight: 700;
   font-size: 17px;
 `;
+
+export const SignupBtn = styled.button`
+  ${Size}
+  background: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #ff6a21;
+  font-weight: 700;
+  font-size: 17px;
+`;

@@ -17,7 +17,11 @@ const Header = ({ type }) => {
 
   return (
     <S.HeaderBox>
-      <S.Back alt="back" src="images/header/back.png" onClick={onClickBack} />
+      {headerList[type].title === "회원가입" ? (
+        <S.Back alt="back" src="images/header/back.png" onClick={onClickBack} />
+      ) : (
+        <S.Back />
+      )}
       <S.Title>{headerList[type].title}</S.Title>
       <div />
     </S.HeaderBox>

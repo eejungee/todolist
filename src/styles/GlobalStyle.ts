@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body,
   #root {
-    ${flex("center", null, null)}
+    ${flex("center", "", "")}
     width: 360px;
     height: 800px;
   }

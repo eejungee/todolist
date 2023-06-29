@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import * as S from "./Signin.style";
+import API from "../../config/config";
 import Header from "../../Components/Header/Header";
+import * as S from "./Signup.style";
 
-const Signin = () => {
-  const [signinInfo, setSigninInfo] = useState({
+interface SignupType {
+  email: string;
+  password: string;
+}
+
+const Signup = () => {
+  const [signupInfo, setSignupInfo] = useState<SignupType>({
     email: "",
     password: "",
   });
 
-  const { email, password } = signinInfo;
+  const { email, password } = signupInfo;
 
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -21,11 +27,11 @@ const Signin = () => {
   }, [navigate]);
 
   const handleEmail = (e) => {
-    setSigninInfo((prev) => ({ ...prev, email: e.target.value }));
+    setSignupInfo((prev) => ({ ...prev, email: e.target.value }));
   };
 
   const handlePassword = (e) => {
-    setSigninInfo((prev) => ({ ...prev, password: e.target.value }));
+    setSignupInfo((prev) => ({ ...prev, password: e.target.value }));
   };
 
   const checkEmail = email && email.includes("@");
@@ -37,7 +43,7 @@ const Signin = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://www.pre-onboarding-selection-task.shop/auth/signin", {
+    fetch(`${API.SIGNUP}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,13 +53,11 @@ const Signin = () => {
         password: password,
       }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.access_token) {
-          localStorage.setItem("token", data.access_token);
-          navigate("/todo");
+      .then((res) => {
+        if (res.status === 201) {
+          return navigate("/signin");
         } else {
-          alert("로그인 실패!");
+          alert("회원가입 실패");
         }
       })
       .catch((error) => {
@@ -64,39 +68,41 @@ const Signin = () => {
 
   return (
     <div>
-      <Header type="signin" />
+      <Header type="signup" />
       <S.FormBox>
-        <S.SigninInput
+        <S.SignupLabel>이메일</S.SignupLabel>
+        <S.SignupInput
           data-testid="email-input"
           type="text"
           value={email}
+          placeholder="@를 포함하여 입력하세요"
           onChange={handleEmail}
-          placeholder="이메일을 입력해주세요"
         />
         {email && !checkEmail && (
           <S.AlertMsg>@를 포함하여 입력해주세요</S.AlertMsg>
         )}
-        <S.SigninInput
+        <S.SignupLabel>비밀번호</S.SignupLabel>
+        <S.SignupInput
           data-testid="password-input"
           type="password"
           value={password}
+          placeholder="8자리 이상 입력하세요"
           onChange={handlePassword}
-          placeholder="비밀번호를 입력해주세요"
         />
         {password && !checkPassword && (
           <S.AlertMsg>8자 이상 입력해주세요</S.AlertMsg>
         )}
         <S.SubmitBtn
-          data-testid="signin-button"
+          data-testid="signup-button"
           onClick={onSubmit}
           disabled={handleDisabled ? true : false}
           handleDisabled={handleDisabled}
         >
-          로그인
+          회원가입 완료
         </S.SubmitBtn>
       </S.FormBox>
     </div>
   );
 };
 
-export default Signin;
+export default Signup;

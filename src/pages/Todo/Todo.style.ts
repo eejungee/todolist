@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { flex } from "../../styles/mixin";
 
 export const TodoInputBox = styled.form`
-  ${flex("center", "center", null)}
+  ${flex("center", "center", "center")}
   width: 360px;
   gap: 10px;
 `;
@@ -33,7 +33,7 @@ export const AlertMsg = styled.p`
 `;
 
 export const TodoLists = styled.ul`
-  ${flex(null, null, "column")}
+  ${flex("", "center", "column")}
   width: 360px;
   height: 600px;
   padding: 10px;

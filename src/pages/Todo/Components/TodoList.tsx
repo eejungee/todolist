@@ -3,8 +3,8 @@ import API from "../../../config/config";
 import * as S from "./TodoList.style";
 
 const TodoList = ({ todo, index, setTodos, deleteTodo }) => {
-  const [isUpdateClicked, setIsUpdateClicked] = useState(false);
-  const [updateInput, setUpdateInput] = useState(todo.todo);
+  const [isUpdateClicked, setIsUpdateClicked] = useState<boolean>(false);
+  const [updateInput, setUpdateInput] = useState<string>(todo.todo);
 
   const token = localStorage.getItem("token");
 
