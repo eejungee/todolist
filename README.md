@@ -18,9 +18,7 @@ $ npm start
 ## 배포링크
 ___
 
-* signup : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/signup
-* signin : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/signin
-* todo : https://wanted-pre-onboarding-frontend-sooty-psi.vercel.app/todo
+
 
 <br/>
 
