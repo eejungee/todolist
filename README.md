@@ -25,9 +25,9 @@ https://todolist-rho-swart.vercel.app/
 ## 기술스택
 ___
 
-|JavaScript|React.js|Styled-components|
-|---|---|---|
-|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; justify-content: center; align-items: center;"><img src="https://blog.kakaocdn.net/dn/l92lK/btqFNFi2V2k/kIYdVhPlhlvoG8ULF0uy61/img.png" alt="icon" width="65" height="65" /></div>|
+|JavaScript|React.js|Typescript|Styled-components|
+|---|---|---|---|
+|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/react-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="icon" width="65" height="65" /></div>|<div style="display: flex; justify-content: center; align-items: center;"><img src="https://blog.kakaocdn.net/dn/l92lK/btqFNFi2V2k/kIYdVhPlhlvoG8ULF0uy61/img.png" alt="icon" width="65" height="65" /></div>|
 
 <br/>
 
